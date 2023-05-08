@@ -29,7 +29,17 @@ export default class HomeScreen extends Component {
   getData = async () => {
     /*Escreva o código para buscar dados de sua API Flask.
      Armazene os dados obtidos em um estado chamado data*/
+     const {url} = this.state;
+     axios
+     .get(url)
+     .then((response)=>{
+         this.setDetails(response.data.data)
+     })
+     .catch((error)=>{
+       alert(error.message)
+     })
 
+     
      
   };
 

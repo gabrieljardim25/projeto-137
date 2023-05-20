@@ -31,11 +31,11 @@ export default class StarScren extends Component {
         Certifique-se de usar o argumento name.
         Armazene os dados obtidos no estado chamado "data"*/
         
-    const {url} = this.state;
+      const url =  "https://db34-2804-7f1-e693-de43-a4ee-2e39-957c-a076.sa.ngrok.io/star?name=${nome}";
     axios
     .get(url)
     .then((response)=>{
-        this.setDetails(response.data.data)
+        this.setState({data: response.data.data})
     })
     .catch((error)=>{
       alert(error.message)

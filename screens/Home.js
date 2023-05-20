@@ -29,11 +29,11 @@ export default class HomeScreen extends Component {
   getData = async () => {
     /*Escreva o código para buscar dados de sua API Flask.
      Armazene os dados obtidos em um estado chamado data*/
-     const {url} = this.state;
+     const url =  "https://db34-2804-7f1-e693-de43-a4ee-2e39-957c-a076.sa.ngrok.io";
      axios
      .get(url)
      .then((response)=>{
-         this.setDetails(response.data.data)
+      this.setState({data: response.data.data})
      })
      .catch((error)=>{
        alert(error.message)
